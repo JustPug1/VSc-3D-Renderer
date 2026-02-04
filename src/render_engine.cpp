@@ -4,20 +4,37 @@
 #include <cmath>
 
 RenderEngine::RenderEngine(int w, int h, SDL_Renderer* r) {
+    // Constructor - Sets variables to given values
+
     this->width = w;
     this->height = h; 
     this->renderer = r;
 }
 
 float RenderEngine::to_radians(float degrees) {
+    // Simple converter from degress to radians
+
     return degrees * (std::numbers::pi_v<float> / 180.0f);
 }
 
 float RenderEngine::normalize_axis(Sint16 value) {
+    // A function which normalizes the given xbox 
+    // controller axis values and normalizes them to (from 0 to 1) 0.x
+    // returns a float value
+
     return static_cast<float>(value) / 32768.0f;
 }
 
 void RenderEngine::point(Point_2D p) {
+    // this function draws a pre-set size point 
+    // onto the screen - BUT the coordinates are centered
+    // meaning the center point of the screen is the origin
+    // of the screen - and it spreads as a floating value
+    // from -1 to 1 on each axis
+
+    // basically a normalizing function to Cartesian coordinate system
+    // with the origin at the center of the screen
+
     const float scale = 25.0f;
 
     SDL_SetRenderDrawColor(renderer, 70, 255, 70, 255); 
