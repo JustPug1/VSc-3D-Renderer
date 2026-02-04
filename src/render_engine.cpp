@@ -26,14 +26,10 @@ float RenderEngine::normalize_axis(Sint16 value) {
 }
 
 void RenderEngine::point(Point_2D p) {
-    // this function draws a pre-set size point 
-    // onto the screen - BUT the coordinates are centered
-    // meaning the center point of the screen is the origin
-    // of the screen - and it spreads as a floating value
-    // from -1 to 1 on each axis
-
-    // basically a normalizing function to Cartesian coordinate system
-    // with the origin at the center of the screen
+    // Draws a 25x25 pixel square at the provided screen coordinates.
+    // Maps the logic from a centered Cartesian system (-1 to 1) 
+    // to the actual SDL rendering window.
+    // Uses SDL_FRect for floating-point precision when positioning the point.
 
     const float scale = 25.0f;
 
@@ -43,6 +39,10 @@ void RenderEngine::point(Point_2D p) {
 }
 
 RenderEngine::Point_2D RenderEngine::project(const Point_3D& p) {
+    // Perspective Projection: Maps a 3D point (x, y, z) to a 2D plane.
+    // We divide X and Y by Z to simulate how objects appear smaller 
+    // as they get further away from the camera.
+
     Point_2D new_point;
     new_point.x = p.x / p.z;
     new_point.y = p.y / p.z;
@@ -51,6 +51,10 @@ RenderEngine::Point_2D RenderEngine::project(const Point_3D& p) {
 }
 
 RenderEngine::Point_2D RenderEngine::screen(const Point_2D& p) {
+    // Maps normalized coordinates (-1 to 1) to actual screen pixels (0 to width/height).
+    // It also flips the Y-axis because screen pixels start at the top (0) and go down, 
+    // whereas mathematical 3D space usually goes from bottom up.
+
     Point_2D sp;
     sp.x = ((p.x + 1)/2) * width;
     sp.y = (1 - (p.y + 1)/2) * height;
@@ -59,6 +63,16 @@ RenderEngine::Point_2D RenderEngine::screen(const Point_2D& p) {
 } 
 
 void RenderEngine::draw_thick_line(Point_2D p1, Point_2D p2, float thickness) {
+    /**
+    * Renders a line with custom thickness using GPU geometry.
+    * 
+    * Process:
+    * 1. Calculates the line direction (dx, dy) and its length.
+    * 2. Finds the 'Normal' vector (perpendicular) to the line.
+    * 3. Offsets the start and end points by this normal to create 4 corners.
+    * 4. Uses SDL_RenderGeometry to draw two triangles forming a thick rectangle.
+    */
+
     float dx = p2.x - p1.x;
     float dy = p2.y - p1.y;
     float length = std::sqrt(dx * dx + dy * dy);
@@ -98,20 +112,28 @@ void RenderEngine::draw_thick_line(Point_2D p1, Point_2D p2, float thickness) {
 }
 
 RenderEngine::Point_3D RenderEngine::rotate_roll(const Point_3D& p, float angle) {
+    // Rotates the point around the Z-axis (tilting the drone left or right).
+    // Affects X and Y coordinates while Z remains unchanged.
+
     float c = std::cos(angle);
     float s = std::sin(angle);
     return { p.x * c - p.y * s, p.x * s + p.y * c, p.z };
 }
 
 RenderEngine::Point_3D RenderEngine::rotate_pitch(const Point_3D& p, float angle) {
+    // Rotates the point around the X-axis (tilting the nose up or down).
+    // Affects Y and Z coordinates while X remains unchanged.
+
     float c = std::cos(angle);
     float s = std::sin(angle);
     return { p.x, p.y * c - p.z * s, p.y * s + p.z * c };
 }
 
 RenderEngine::Point_3D RenderEngine::rotate_yaw(const Point_3D& p, float angle) {
+    // Rotates the point around the Y-axis (turning the nose left or right).
+    // Affects X and Z coordinates while Y remains unchanged.
+
     float c = std::cos(angle);
     float s = std::sin(angle);
     return { p.x * c + p.z * s, p.y, -p.x * s + p.z * c };
 }
-

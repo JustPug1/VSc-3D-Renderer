@@ -10,25 +10,28 @@ constexpr int WINDOW_HEIGHT = 1500;
 
 class RenderEngine {
 public:
+    // Simple struct for (x,y) point representation
     struct Point_2D {
         float x;
         float y;
     };
 
+    // Simple struct for (x,y,z) point representation
     struct Point_3D {
         float x;
         float y;
         float z;
     };
 
+    // Simple struct for (2D Point to 2D Point) line representation
     struct Edge {
         int start;
         int end;
     };
 
 private:
-    int width;
-    int height;
+    int width; // screen width
+    int height; // screen height
     SDL_Renderer* renderer; // The class owns this!
 
     // Store object data inside the class
