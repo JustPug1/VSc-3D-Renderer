@@ -32,8 +32,8 @@ private:
     SDL_Renderer* renderer; // The class owns this!
 
     // Store object data inside the class
-    std::vector<Point_3D> vertices;
-    std::vector<Edge> edges;
+    // std::vector<Point_3D> vertices;
+    // std::vector<Edge> edges;
     
 
 public:
@@ -53,7 +53,8 @@ public:
 
     void draw_thick_line(Point_2D p1, Point_2D p2, float thickness);
 
-    // Main Draw Loop
-    void draw_obj(float delta_z, float delta_angle_x, float delta_angle_y, float delta_angle_z);
-
+    // Rotators
+    Point_3D rotate_roll(const Point_3D& p, float angle);
+    Point_3D rotate_pitch(const Point_3D& p, float angle);
+    Point_3D rotate_yaw(const Point_3D& p, float angle);
 };

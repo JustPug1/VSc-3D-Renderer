@@ -12,7 +12,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 link_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
 # 3. Create the executable
-add_executable(VSC_Renderer src/main.cpp)
+add_executable(VSC_Renderer src/main.cpp src/render_engine.cpp src/sdl_engine.cpp)
 
 # 4. Link SDL3
 target_link_libraries(VSC_Renderer PRIVATE SDL3)

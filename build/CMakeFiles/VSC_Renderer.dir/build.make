@@ -86,19 +86,53 @@ CMakeFiles/VSC_Renderer.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VSC_Renderer.dir/src/main.cpp.s"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\src\main.cpp" -o CMakeFiles\VSC_Renderer.dir\src\main.cpp.s
 
+CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.obj: CMakeFiles/VSC_Renderer.dir/flags.make
+CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.obj: CMakeFiles/VSC_Renderer.dir/includes_CXX.rsp
+CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.obj: C:/Users/motis/OneDrive/Dokument/Drone\ Folder/VSc\ 3D\ Renderer/src/render_engine.cpp
+CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.obj: CMakeFiles/VSC_Renderer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.obj -MF CMakeFiles\VSC_Renderer.dir\src\render_engine.cpp.obj.d -o CMakeFiles\VSC_Renderer.dir\src\render_engine.cpp.obj -c "C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\src\render_engine.cpp"
+
+CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\src\render_engine.cpp" > CMakeFiles\VSC_Renderer.dir\src\render_engine.cpp.i
+
+CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\src\render_engine.cpp" -o CMakeFiles\VSC_Renderer.dir\src\render_engine.cpp.s
+
+CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.obj: CMakeFiles/VSC_Renderer.dir/flags.make
+CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.obj: CMakeFiles/VSC_Renderer.dir/includes_CXX.rsp
+CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.obj: C:/Users/motis/OneDrive/Dokument/Drone\ Folder/VSc\ 3D\ Renderer/src/sdl_engine.cpp
+CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.obj: CMakeFiles/VSC_Renderer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.obj -MF CMakeFiles\VSC_Renderer.dir\src\sdl_engine.cpp.obj.d -o CMakeFiles\VSC_Renderer.dir\src\sdl_engine.cpp.obj -c "C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\src\sdl_engine.cpp"
+
+CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\src\sdl_engine.cpp" > CMakeFiles\VSC_Renderer.dir\src\sdl_engine.cpp.i
+
+CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\src\sdl_engine.cpp" -o CMakeFiles\VSC_Renderer.dir\src\sdl_engine.cpp.s
+
 # Object files for target VSC_Renderer
 VSC_Renderer_OBJECTS = \
-"CMakeFiles/VSC_Renderer.dir/src/main.cpp.obj"
+"CMakeFiles/VSC_Renderer.dir/src/main.cpp.obj" \
+"CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.obj" \
+"CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.obj"
 
 # External object files for target VSC_Renderer
 VSC_Renderer_EXTERNAL_OBJECTS =
 
 VSC_Renderer.exe: CMakeFiles/VSC_Renderer.dir/src/main.cpp.obj
+VSC_Renderer.exe: CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.obj
+VSC_Renderer.exe: CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.obj
 VSC_Renderer.exe: CMakeFiles/VSC_Renderer.dir/build.make
 VSC_Renderer.exe: CMakeFiles/VSC_Renderer.dir/linkLibs.rsp
 VSC_Renderer.exe: CMakeFiles/VSC_Renderer.dir/objects1.rsp
 VSC_Renderer.exe: CMakeFiles/VSC_Renderer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable VSC_Renderer.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable VSC_Renderer.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\VSC_Renderer.dir\link.txt --verbose=$(VERBOSE)
 	"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different "C:/Users/motis/OneDrive/Dokument/Drone Folder/VSc 3D Renderer/bin/SDL3.dll" "C:/Users/motis/OneDrive/Dokument/Drone Folder/VSc 3D Renderer/build"
 

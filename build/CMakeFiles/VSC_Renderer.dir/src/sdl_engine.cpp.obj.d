@@ -1,5 +1,6 @@
-CMakeFiles/VSC_Renderer.dir/src/main.cpp.obj: \
- C:\Users\motis\OneDrive\Dokument\Drone\ Folder\VSc\ 3D\ Renderer\src\main.cpp \
+CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.obj: \
+ C:\Users\motis\OneDrive\Dokument\Drone\ Folder\VSc\ 3D\ Renderer\src\sdl_engine.cpp \
+ C:\Users\motis\OneDrive\Dokument\Drone\ Folder\VSc\ 3D\ Renderer\src\sdl_engine.h \
  C:/Users/motis/OneDrive/Dokument/DRONEF~1/VSC3DR~1/include/SDL3/SDL.h \
  C:/Users/motis/OneDrive/Dokument/DRONEF~1/VSC3DR~1/include/SDL3/SDL_stdinc.h \
  C:/Users/motis/OneDrive/Dokument/DRONEF~1/VSC3DR~1/include/SDL3/SDL_platform_defines.h \
@@ -211,27 +212,4 @@ CMakeFiles/VSC_Renderer.dir/src/main.cpp.obj: \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/basic_ios.tcc \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/ostream.tcc \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/istream \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/istream.tcc \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cmath \
- C:/mingw64/x86_64-w64-mingw32/include/math.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/specfun.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/limits \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/gamma.tcc \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/special_function_util.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/bessel_function.tcc \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/beta_function.tcc \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/ell_integral.tcc \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/exp_integral.tcc \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/hypergeometric.tcc \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/legendre_function.tcc \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/modified_bessel_func.tcc \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/poly_hermite.tcc \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/poly_laguerre.tcc \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/riemann_zeta.tcc \
- C:\Users\motis\OneDrive\Dokument\Drone\ Folder\VSc\ 3D\ Renderer\src\render_engine.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/vector \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_uninitialized.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_vector.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_bvector.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/vector.tcc \
- C:\Users\motis\OneDrive\Dokument\Drone\ Folder\VSc\ 3D\ Renderer\src\sdl_engine.h
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/istream.tcc

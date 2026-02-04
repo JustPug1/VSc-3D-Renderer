@@ -3,9 +3,10 @@
 #include <numbers> // For std::numbers::pi_v
 #include <cmath>
 
-RenderEngine::RenderEngine(int w, int h, SDL_Renderer* r)
-    : width(w), height(h), renderer(r) {
-    // Initialize any other members if necessary
+RenderEngine::RenderEngine(int w, int h, SDL_Renderer* r) {
+    this->width = w;
+    this->height = h; 
+    this->renderer = r;
 }
 
 float RenderEngine::to_radians(float degrees) {
@@ -78,9 +79,22 @@ void RenderEngine::draw_thick_line(Point_2D p1, Point_2D p2, float thickness) {
 
     SDL_RenderGeometry(renderer, nullptr, verts, 4, indices, 6);
 }
-void RenderEngine::draw_obj(float delta_z, float delta_angle_x, float delta_angle_y, float delta_angle_z) {
-    // Implementation of the main draw loop goes here
-    // This function would typically update the vertices based on the deltas
-    // and then render them using the other member functions.
+
+RenderEngine::Point_3D RenderEngine::rotate_roll(const Point_3D& p, float angle) {
+    float c = std::cos(angle);
+    float s = std::sin(angle);
+    return { p.x * c - p.y * s, p.x * s + p.y * c, p.z };
+}
+
+RenderEngine::Point_3D RenderEngine::rotate_pitch(const Point_3D& p, float angle) {
+    float c = std::cos(angle);
+    float s = std::sin(angle);
+    return { p.x, p.y * c - p.z * s, p.y * s + p.z * c };
+}
+
+RenderEngine::Point_3D RenderEngine::rotate_yaw(const Point_3D& p, float angle) {
+    float c = std::cos(angle);
+    float s = std::sin(angle);
+    return { p.x * c + p.z * s, p.y, -p.x * s + p.z * c };
 }
 

@@ -152,6 +152,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/render_engine.obj: src/render_engine.cpp.obj
+.PHONY : src/render_engine.obj
+
+# target to build an object file
+src/render_engine.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.obj
+.PHONY : src/render_engine.cpp.obj
+
+src/render_engine.i: src/render_engine.cpp.i
+.PHONY : src/render_engine.i
+
+# target to preprocess a source file
+src/render_engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.i
+.PHONY : src/render_engine.cpp.i
+
+src/render_engine.s: src/render_engine.cpp.s
+.PHONY : src/render_engine.s
+
+# target to generate assembly for a file
+src/render_engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.s
+.PHONY : src/render_engine.cpp.s
+
+src/sdl_engine.obj: src/sdl_engine.cpp.obj
+.PHONY : src/sdl_engine.obj
+
+# target to build an object file
+src/sdl_engine.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.obj
+.PHONY : src/sdl_engine.cpp.obj
+
+src/sdl_engine.i: src/sdl_engine.cpp.i
+.PHONY : src/sdl_engine.i
+
+# target to preprocess a source file
+src/sdl_engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.i
+.PHONY : src/sdl_engine.cpp.i
+
+src/sdl_engine.s: src/sdl_engine.cpp.s
+.PHONY : src/sdl_engine.s
+
+# target to generate assembly for a file
+src/sdl_engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.s
+.PHONY : src/sdl_engine.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -164,6 +212,12 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/render_engine.obj
+	@echo ... src/render_engine.i
+	@echo ... src/render_engine.s
+	@echo ... src/sdl_engine.obj
+	@echo ... src/sdl_engine.i
+	@echo ... src/sdl_engine.s
 .PHONY : help
 
 

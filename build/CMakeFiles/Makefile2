@@ -84,12 +84,12 @@ clean: CMakeFiles/VSC_Renderer.dir/clean
 CMakeFiles/VSC_Renderer.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\build\CMakeFiles" --progress-num=1,2 "Built target VSC_Renderer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\build\CMakeFiles" --progress-num=1,2,3,4 "Built target VSC_Renderer"
 .PHONY : CMakeFiles/VSC_Renderer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/VSC_Renderer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\build\CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\build\CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/VSC_Renderer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\build\CMakeFiles" 0
 .PHONY : CMakeFiles/VSC_Renderer.dir/rule
@@ -101,7 +101,7 @@ VSC_Renderer: CMakeFiles/VSC_Renderer.dir/rule
 # codegen rule for target.
 CMakeFiles/VSC_Renderer.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\build\CMakeFiles" --progress-num=1,2 "Finished codegen for target VSC_Renderer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\motis\OneDrive\Dokument\Drone Folder\VSc 3D Renderer\build\CMakeFiles" --progress-num=1,2,3,4 "Finished codegen for target VSC_Renderer"
 .PHONY : CMakeFiles/VSC_Renderer.dir/codegen
 
 # clean rule for target.
