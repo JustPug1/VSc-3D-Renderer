@@ -1,0 +1,3 @@
+C:/Users/motis/OneDrive/Dokument/Drone Folder/VSc 3D Renderer/build/CMakeFiles/VSC_Renderer.dir
+C:/Users/motis/OneDrive/Dokument/Drone Folder/VSc 3D Renderer/build/CMakeFiles/edit_cache.dir
+C:/Users/motis/OneDrive/Dokument/Drone Folder/VSc 3D Renderer/build/CMakeFiles/rebuild_cache.dir

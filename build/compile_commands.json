@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/motis/OneDrive/Dokument/Drone Folder/VSc 3D Renderer/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/VSC_Renderer.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\VSC_Renderer.dir\\src\\main.cpp.obj -c \"C:\\Users\\motis\\OneDrive\\Dokument\\Drone Folder\\VSc 3D Renderer\\src\\main.cpp\"",
+  "file": "C:/Users/motis/OneDrive/Dokument/Drone Folder/VSc 3D Renderer/src/main.cpp",
+  "output": "CMakeFiles/VSC_Renderer.dir/src/main.cpp.obj"
+}
+]
