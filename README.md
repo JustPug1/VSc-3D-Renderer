@@ -36,4 +36,5 @@
   - Compiler: GCC (MinGW) or MSVC with C++20 support.
   - Library: SDL3.
   - Build System: CMake.
+
     
