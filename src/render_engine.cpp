@@ -25,6 +25,14 @@ float RenderEngine::normalize_axis(Sint16 value) {
     return static_cast<float>(value) / 32768.0f;
 }
 
+float RenderEngine::get_height() {
+    return this->height;
+}
+
+float RenderEngine::get_width() {
+    return this->width;
+}
+
 void RenderEngine::point(Point_2D p) {
     // Draws a 25x25 pixel square at the provided screen coordinates.
     // Maps the logic from a centered Cartesian system (-1 to 1) 
@@ -109,6 +117,36 @@ void RenderEngine::draw_thick_line(Point_2D p1, Point_2D p2, float thickness) {
     int indices[6] = { 0, 1, 2, 2, 1, 3 };
 
     SDL_RenderGeometry(renderer, nullptr, verts, 4, indices, 6);
+}
+
+void RenderEngine::draw_filled_triangle(Point_2D p1, Point_2D p2, Point_2D p3) {
+    /**
+     * Renders a solid triangle using SDL's geometry API.
+     * This is significantly faster than a manual scanline fill.
+     */
+    
+    SDL_Vertex verts[3];
+    SDL_FColor col = { 0.07f, 1.0f, 0.07f, 1.0f }; // Matching your drone's green
+
+    // Vertex 1
+    verts[0].position.x = p1.x;
+    verts[0].position.y = p1.y;
+    verts[0].color = col;
+
+    // Vertex 2
+    verts[1].position.x = p2.x;
+    verts[1].position.y = p2.y;
+    verts[1].color = col;
+
+    // Vertex 3
+    verts[2].position.x = p3.x;
+    verts[2].position.y = p3.y;
+    verts[2].color = col;
+
+    // For a single triangle, the indices are just 0, 1, 2
+    int indices[3] = { 0, 1, 2 };
+
+    SDL_RenderGeometry(renderer, nullptr, verts, 3, indices, 3);
 }
 
 RenderEngine::Point_3D RenderEngine::rotate_roll(const Point_3D& p, float angle) {

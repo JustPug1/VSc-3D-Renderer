@@ -47,6 +47,10 @@ public:
     float to_radians(float degrees);
     float normalize_axis(Sint16 value);
 
+    // Getters
+    float get_height();
+    float get_width();
+
     // Rendering Functions
     void point(Point_2D p);
     
@@ -55,6 +59,7 @@ public:
     Point_2D screen(const Point_2D& p); 
 
     void draw_thick_line(Point_2D p1, Point_2D p2, float thickness);
+    void draw_filled_triangle(Point_2D p1, Point_2D p2, Point_2D p3);
 
     // Rotators
     Point_3D rotate_roll(const Point_3D& p, float angle);
