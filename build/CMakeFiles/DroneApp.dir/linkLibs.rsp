@@ -1,0 +1,1 @@
+  -LC:/Users/motis/OneDrive/Dokument/DRONEF~1/VSC3DR~1/lib  -L"C:/SDL3-3.4.0/x86_64-w64-mingw32/lib"  -lSDL3 C:/Python/libs/python310.lib -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

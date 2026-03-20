@@ -4,6 +4,7 @@
 #include <numbers>
 #include "render_engine.h"
 #include "sdl_engine.h"
+#include "pythonManager.h"
 
 const int FPS = 120;
 
@@ -101,64 +102,75 @@ int main() {
     RenderEngine engine(1800, 1300, sdl_obj.renderer);
     SDL_Gamepad* controller = sdl_obj.Connect_First_Controller();
 
+    PythonManager* py = new PythonManager("drone_telemetry");
+
     float delta_x = 0.2f;
     float delta_y = 0.2f;
     float delta_z = 2.0f; // Keep it further back so we can see it
     
-    // Variables to hold "Received Data" in Degrees
     float pitch_cmd = 0.0f;
     float roll_cmd = 0.0f;
     float yaw_cmd = 0.0f;
     
-    float pitch_rate = 0.0f;
-    float roll_rate = 0.0f;
     float yaw_rate = 10.0f;
+    bool running = true; // Added to handle clean shutdowns
 
-    float time = 0.0f;
-
-    while (true) {
+    while (running) {
         SDL_Event e;
         while (SDL_PollEvent(&e)) {
              if (e.type == SDL_EVENT_QUIT) {
-                return 0; 
+                running = false; // Break the loop safely instead of 'return 0;'
             }
 
             if (e.type == SDL_EVENT_GAMEPAD_REMOVED) {
-             SDL_CloseGamepad(controller);
-             controller = nullptr;
+                SDL_CloseGamepad(controller);
+                controller = nullptr;
             }
         }
-        if (!controller) {
-            yaw_cmd += engine.normalize_axis(SDL_GetGamepadAxis(controller, SDL_GAMEPAD_AXIS_LEFTX)) * yaw_rate;  // some bugs still
-            //normalize_axis(SDL_GetGamepadAxis(controller, SDL_GAMEPAD_AXIS_LEFTY));
+        
+        // Fixed: We only want to read the controller if it IS connected
+        if (controller != nullptr) {
+            yaw_cmd += engine.normalize_axis(SDL_GetGamepadAxis(controller, SDL_GAMEPAD_AXIS_LEFTX)) * yaw_rate; 
         }
 
         SDL_SetRenderDrawColor(sdl_obj.renderer, 0, 0, 0, 255);
         SDL_RenderClear(sdl_obj.renderer);
 
-        // --- SIMULATE RECEIVED DATA ---
-        time += 0.01f;
-        // Delta X
+        // 1. Get Live Telemetry from Python
+        DroneTelemetry telemetry = py->getTelemetry();
 
-        // Delta Y 
-        //delta_y += 0.01f;
+        // 2. Map Telemetry to 3D Engine Commands
+        // We cast to float because SDL and your RenderEngine likely use 32-bit floats
+        roll_cmd  = static_cast<float>(telemetry.roll);
+        pitch_cmd = static_cast<float>(telemetry.pitch);
+        yaw_cmd   = static_cast<float>(telemetry.yaw);
 
-        // Pitch: Nod up and down
-        pitch_cmd = std::sin(time) * 100.0f; 
-        // Yaw: Slowly spin around
-        yaw_cmd += 1.0f; 
-        // Roll: Wobble left and right
-        roll_cmd = std::cos(time * 2.0f) * 100.0f;
+        // --- AXIS INVERSION CHECK ---
+        // Flight controllers usually have: Pitch Forward = Negative
+        // 3D Engines usually have: Pitch Forward = Positive
+        // If your drone tilts backwards on the screen when you tilt it forwards in real life, 
+        // simply invert the value like this:
+        // pitch_cmd = -static_cast<float>(telemetry.pitch);
+        // roll_cmd  = -static_cast<float>(telemetry.roll);
 
-        // Pass the angles to the function
+        std::cout << "\r[C++] Roll: " << roll_cmd 
+                  << " | Pitch: " << pitch_cmd 
+                  << " | Yaw: " << yaw_cmd << "      " << std::flush;
+
+        // 3. Draw the Drone
         draw_drone_with_engine(engine, delta_x, delta_y, delta_z, pitch_cmd, yaw_cmd, roll_cmd);
 
         SDL_RenderPresent(sdl_obj.renderer);
         SDL_Delay(1000 / FPS);
     }
 
+    // Safely clean up everything
     SDL_DestroyRenderer(sdl_obj.renderer);
     SDL_DestroyWindow(sdl_obj.window);
     SDL_Quit();
+    
+    std::cout << "\nCleaning up Python..." << std::endl;
+    delete py; // Destructor will now close the COM port properly
+    
     return 0;
 }

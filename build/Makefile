@@ -116,24 +116,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named VSC_Renderer
+# Target rules for targets named DroneApp
 
 # Build rule for target.
-VSC_Renderer: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 VSC_Renderer
-.PHONY : VSC_Renderer
+DroneApp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 DroneApp
+.PHONY : DroneApp
 
 # fast build rule for target.
-VSC_Renderer/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/build
-.PHONY : VSC_Renderer/fast
+DroneApp/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DroneApp.dir\build.make CMakeFiles/DroneApp.dir/build
+.PHONY : DroneApp/fast
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
 # target to build an object file
 src/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DroneApp.dir\build.make CMakeFiles/DroneApp.dir/src/main.cpp.obj
 .PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
@@ -141,7 +141,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DroneApp.dir\build.make CMakeFiles/DroneApp.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -149,15 +149,39 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DroneApp.dir\build.make CMakeFiles/DroneApp.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/pythonManager.obj: src/pythonManager.cpp.obj
+.PHONY : src/pythonManager.obj
+
+# target to build an object file
+src/pythonManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DroneApp.dir\build.make CMakeFiles/DroneApp.dir/src/pythonManager.cpp.obj
+.PHONY : src/pythonManager.cpp.obj
+
+src/pythonManager.i: src/pythonManager.cpp.i
+.PHONY : src/pythonManager.i
+
+# target to preprocess a source file
+src/pythonManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DroneApp.dir\build.make CMakeFiles/DroneApp.dir/src/pythonManager.cpp.i
+.PHONY : src/pythonManager.cpp.i
+
+src/pythonManager.s: src/pythonManager.cpp.s
+.PHONY : src/pythonManager.s
+
+# target to generate assembly for a file
+src/pythonManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DroneApp.dir\build.make CMakeFiles/DroneApp.dir/src/pythonManager.cpp.s
+.PHONY : src/pythonManager.cpp.s
 
 src/render_engine.obj: src/render_engine.cpp.obj
 .PHONY : src/render_engine.obj
 
 # target to build an object file
 src/render_engine.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DroneApp.dir\build.make CMakeFiles/DroneApp.dir/src/render_engine.cpp.obj
 .PHONY : src/render_engine.cpp.obj
 
 src/render_engine.i: src/render_engine.cpp.i
@@ -165,7 +189,7 @@ src/render_engine.i: src/render_engine.cpp.i
 
 # target to preprocess a source file
 src/render_engine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DroneApp.dir\build.make CMakeFiles/DroneApp.dir/src/render_engine.cpp.i
 .PHONY : src/render_engine.cpp.i
 
 src/render_engine.s: src/render_engine.cpp.s
@@ -173,7 +197,7 @@ src/render_engine.s: src/render_engine.cpp.s
 
 # target to generate assembly for a file
 src/render_engine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/render_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DroneApp.dir\build.make CMakeFiles/DroneApp.dir/src/render_engine.cpp.s
 .PHONY : src/render_engine.cpp.s
 
 src/sdl_engine.obj: src/sdl_engine.cpp.obj
@@ -181,7 +205,7 @@ src/sdl_engine.obj: src/sdl_engine.cpp.obj
 
 # target to build an object file
 src/sdl_engine.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DroneApp.dir\build.make CMakeFiles/DroneApp.dir/src/sdl_engine.cpp.obj
 .PHONY : src/sdl_engine.cpp.obj
 
 src/sdl_engine.i: src/sdl_engine.cpp.i
@@ -189,7 +213,7 @@ src/sdl_engine.i: src/sdl_engine.cpp.i
 
 # target to preprocess a source file
 src/sdl_engine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DroneApp.dir\build.make CMakeFiles/DroneApp.dir/src/sdl_engine.cpp.i
 .PHONY : src/sdl_engine.cpp.i
 
 src/sdl_engine.s: src/sdl_engine.cpp.s
@@ -197,7 +221,7 @@ src/sdl_engine.s: src/sdl_engine.cpp.s
 
 # target to generate assembly for a file
 src/sdl_engine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VSC_Renderer.dir\build.make CMakeFiles/VSC_Renderer.dir/src/sdl_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DroneApp.dir\build.make CMakeFiles/DroneApp.dir/src/sdl_engine.cpp.s
 .PHONY : src/sdl_engine.cpp.s
 
 # Help Target
@@ -208,10 +232,13 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... VSC_Renderer
+	@echo ... DroneApp
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/pythonManager.obj
+	@echo ... src/pythonManager.i
+	@echo ... src/pythonManager.s
 	@echo ... src/render_engine.obj
 	@echo ... src/render_engine.i
 	@echo ... src/render_engine.s

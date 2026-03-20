@@ -3,16 +3,24 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "Build SDL3 Project",
+            "label": "Build Drone Project",
             "command": "C:/mingw64/bin/g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "${workspaceFolder}/src/main.cpp",
-                "-o", "${workspaceFolder}/bin/Projection.exe",
+                "${workspaceFolder}/src/pythonManager.cpp",
+                "-o", "${workspaceFolder}/bin/DroneApp.exe",
+                // Includes
                 "-I${workspaceFolder}/include",
-                "-L${workspaceFolder}/lib",
-                "-lSDL3"
+                "-IC:/SDL3-3.4.0/x86_64-w64-mingw32/include",
+                "-IC:/Python/include",
+                // Library Paths
+                "-LC:/SDL3-3.4.0/x86_64-w64-mingw32/lib",
+                "-LC:/Python/libs",
+                // Libraries to link
+                "-lSDL3",
+                "-lpython310"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -24,7 +32,7 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Compiler task for SDL3"
+            "detail": "Compiles SDL3 and Python Embedded code together"
         }
     ]
 }
